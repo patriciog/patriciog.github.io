@@ -15,16 +15,20 @@ var HelloWorldLayer = cc.Layer.extend({
         //    you may modify it.
         // ask director the window size
         var size = cc.director.getWinSize();
-
+        
         // add a "close" icon to exit the progress. it's an autorelease object
         var closeItem = cc.MenuItemImage.create(
             res.CloseNormal_png,
             res.CloseSelected_png,
             function () {
                 cc.log("Menu is clicked!");
+                
+                var utterance = new SpeechSynthesisUtterance("Menu is clicked!");
+                window.speechSynthesis.speak(utterance);
+                
             },this);
         closeItem.attr({
-            x: size.width/20,
+            x: size.width - 20,
             y: 20,
             anchorX: 0.5,
             anchorY: 0.5
@@ -64,7 +68,7 @@ var HelloWorldLayer = cc.Layer.extend({
 
         this.sprite.runAction(cc.Sequence.create(rotateToA, scaleToA));
         this.helloLabel.runAction(cc.Spawn.create(cc.MoveBy.create(2.5, cc.p(0, size.height - 40)),cc.TintTo.create(2.5,255,125,0)));
-
+        
         return true;
     }
 });
