@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>hb/1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{643, 1}, {103, 154}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {103, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/3.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{799, 105}, {102, 154}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {102, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/c.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{625, 106}, {88, 154}}</string>
+			<key>offset</key>
+			<string>{-7, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {88, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/container.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{313, 25}, {101, 154}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {101, 154}}</string>
+			<key>sourceSize</key>
+			<string>{102, 154}</string>
+		</dict>
+		<key>hb/e.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{469, 25}, {95, 154}}</string>
+			<key>offset</key>
+			<string>{-2, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {95, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/exclamation_mark.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{157, 25}, {102, 154}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {102, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/f.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 25}, {102, 154}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {102, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/floor.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {640, 22}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {640, 22}}</string>
+			<key>sourceSize</key>
+			<string>{640, 22}</string>
+		</dict>
+		<key>hb/hit_01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{917, 273}, {52, 62}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {52, 62}}</string>
+			<key>sourceSize</key>
+			<string>{52, 62}</string>
+		</dict>
+		<key>hb/hit_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{776, 262}, {51, 63}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {51, 63}}</string>
+			<key>sourceSize</key>
+			<string>{51, 63}</string>
+		</dict>
+		<key>hb/hit_03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{851, 261}, {52, 64}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {52, 64}}</string>
+			<key>sourceSize</key>
+			<string>{52, 64}</string>
+		</dict>
+		<key>hb/i.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{313, 128}, {93, 152}}</string>
+			<key>offset</key>
+			<string>{-3, 1}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {93, 152}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/inverted_exclamation_mark.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{799, 1}, {102, 154}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {102, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/jump_01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{926, 219}, {52, 69}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {52, 69}}</string>
+			<key>sourceSize</key>
+			<string>{52, 69}</string>
+		</dict>
+		<key>hb/jump_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{543, 197}, {52, 73}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {52, 73}}</string>
+			<key>sourceSize</key>
+			<string>{52, 73}</string>
+		</dict>
+		<key>hb/jump_03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{955, 109}, {55, 67}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {55, 67}}</string>
+			<key>sourceSize</key>
+			<string>{55, 67}</string>
+		</dict>
+		<key>hb/l.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{469, 122}, {73, 154}}</string>
+			<key>offset</key>
+			<string>{-13, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {73, 154}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/push_01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{776, 209}, {51, 73}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {51, 73}}</string>
+			<key>sourceSize</key>
+			<string>{51, 73}</string>
+		</dict>
+		<key>hb/push_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{851, 209}, {50, 73}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {50, 73}}</string>
+			<key>sourceSize</key>
+			<string>{50, 73}</string>
+		</dict>
+		<key>hb/push_03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{467, 197}, {51, 74}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {51, 74}}</string>
+			<key>sourceSize</key>
+			<string>{51, 74}</string>
+		</dict>
+		<key>hb/s.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{625, 196}, {101, 149}}</string>
+			<key>offset</key>
+			<string>{0, -2}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 5}, {101, 149}}</string>
+			<key>sourceSize</key>
+			<string>{103, 154}</string>
+		</dict>
+		<key>hb/walk_01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{955, 55}, {52, 68}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {52, 68}}</string>
+			<key>sourceSize</key>
+			<string>{52, 68}</string>
+		</dict>
+		<key>hb/walk_02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{955, 1}, {52, 68}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {52, 68}}</string>
+			<key>sourceSize</key>
+			<string>{52, 68}</string>
+		</dict>
+		<key>hb/walk_03.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{955, 166}, {51, 67}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {51, 67}}</string>
+			<key>sourceSize</key>
+			<string>{51, 67}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+		<key>textureFileName</key>
+		<string>hb.pvr</string>
+	</dict>
+</dict>
+</plist>
