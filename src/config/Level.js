@@ -1,8 +1,20 @@
+/**
+ *  Cocos2d-js show case : Happy Birthday
+ *
+ * @Licensed:
+ * This showcase is licensed under GPL.
+ *
+ * @Authors:
+ * Programmer: Patricio González Sevilla
+ *
+ */
+
+// Level definition
 var Level = {
 		letterMax:10,
 		letters:[
 	         {
-	        	 Types:[0,1,2,3,4,5,2,6,7,8,9,10]
+	        	 Types:["¡","f","e","l","i","c","e","s","","3","1","!"]
 	         }
 		]
 };

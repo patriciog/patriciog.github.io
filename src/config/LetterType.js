@@ -1,46 +1,70 @@
+/**
+ * <p>
+ * Cocos2d-js show case : Happy Birthday. <br/>
+ * </p>
+ *
+ * @Licensed:
+ * This showcase is licensed under GPL.
+ *
+ * @Authors:
+ * Programmer: Patricio González Sevilla
+ */
+
+// Letter definitions.
 var LetterType = [
      {
-    	 type:0,
-    	 textureName:"hb/inverted_exclamation_mark.png"
+    	 type:"!",
+    	 textureName:"hb/inverted_exclamation_mark.png",
+    	 soundEffect:res.letterEffect01_mp3
      },
      {
-    	 type:1,
-    	 textureName:"hb/f.png"
+    	 type:"f",
+    	 textureName:"hb/f.png",
+    	 soundEffect:res.letterEffect02_mp3
      },
      {
-    	 type:2,
-    	 textureName:"hb/e.png"
+    	 type:"e",
+    	 textureName:"hb/e.png",
+    	 soundEffect:res.letterEffect03_mp3
      },
      {
-    	 type:3,
-    	 textureName:"hb/l.png"
+    	 type:"l",
+    	 textureName:"hb/l.png",
+    	 soundEffect:res.letterEffect04_mp3
      },
      {
-    	 type:4,
-    	 textureName:"hb/i.png"
+    	 type:"i",
+    	 textureName:"hb/i.png",
+    	 soundEffect:res.letterEffect05_mp3
      },
      {
-    	 type:5,
-    	 textureName:"hb/c.png"
+    	 type:"c",
+    	 textureName:"hb/c.png",
+    	 soundEffect:res.letterEffect06_mp3
      },
      {
-    	 type:6,
-    	 textureName:"hb/s.png"
+    	 type:"s",
+    	 textureName:"hb/s.png",
+    	 soundEffect:res.letterEffect07_mp3
      },
      {
-    	 type:7,
-    	 textureName:""
+    	 type:"",
+    	 textureName:"",
+    	 soundEffect:null
      },
      {
-    	 type:8,
-    	 textureName:"hb/3.png"
+    	 type:"3",
+    	 textureName:"hb/3.png",
+    	 soundEffect:res.letterEffect08_mp3
      },
      {
-    	 type:9,
-    	 textureName:"hb/1.png"
+    	 type:"1",
+    	 textureName:"hb/1.png",
+    	 soundEffect:res.letterEffect08_mp3
      },
      {
-    	 type:10,
-    	 textureName:"hb/exclamation_mark.png"
+    	 type:"¡",
+    	 textureName:"hb/exclamation_mark.png",
+    	 soundEffect:res.letterEffect10_mp3
      }
 ];

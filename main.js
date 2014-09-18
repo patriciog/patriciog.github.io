@@ -1,4 +1,15 @@
 /**
+ *  Cocos2d-js show case : Happy Birthday
+ *
+ * @Licensed:
+ * This showcase is licensed under GPL.
+ *
+ * @Authors:
+ * Programmer: Patricio González Sevilla
+ *
+ */
+
+/**
  * A brief explanation for "project.json":
  * Here is the content of project.json file, this is the global configuration for your game, you can modify it to customize some behavior.
  * The detail of each field is under it.
@@ -42,18 +53,31 @@
 
     "jsList"        : [
     ]
-    // "jsList" sets the list of js files in your game.
+    // "jsList" sets the list of js files in your game added in order to load. Normally first the Resource.js.
  }
  *
  */
 
+/**
+ * <p>
+ * 	Callback when the scripts of engine have been load. <br/>
+ * <p/>
+ * @function
+ */
 cc.game.onStart = function(){
     cc.view.adjustViewPort(true);
     cc.view.setDesignResolutionSize(800, 450, cc.ResolutionPolicy.SHOW_ALL);
     cc.view.resizeWithBrowserSize(true);
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
-    	cc.director.runScene(new SysMenuScene());
+    	cc.director.runScene(new AppScene());
     }, this);
 };
+
+/**
+ * <p>
+ * 	Run game. <br/>
+ * <p/>
+ * @function
+ */
 cc.game.run();
