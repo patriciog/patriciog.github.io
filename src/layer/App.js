@@ -45,6 +45,9 @@ var AppLayer = cc.LayerGradient.extend({
     _isComplete:false,
     _initialVolume:0.0,
     _targetVolume:HB.AUDIO.MUSIC,
+    _leftControl:null,
+    _rightControl:null,
+    _upControl:null,
     
     /**
      * <p>Default constructor.<br/>
@@ -173,6 +176,25 @@ var AppLayer = cc.LayerGradient.extend({
 
     			}
     		}, this);	
+    	}
+    	
+    	// Tutorial images
+    	if( cc.sys.platform == cc.sys.DESKTOP_BROWSER ) {
+    		_leftControl = new cc.Sprite("#hb/left.png");
+    		_leftControl.setPosition(cc.winSize.width * 0.25, cc.winSize.height * 0.75);
+    		_leftControl.visible = false;
+    		this._texHappyBirthdayBatch.addChild(_leftControl, HB.ZORDER.LETTER, HB.UNIT_TAG.LEFT_CONTROL);
+    		
+    		_rightControl = new cc.Sprite("#hb/right.png");
+    		_rightControl.setPosition(cc.winSize.width * 0.75, cc.winSize.height * 0.75);
+    		_rightControl.visible = false;
+    		this._texHappyBirthdayBatch.addChild(_rightControl, HB.ZORDER.LETTER, HB.UNIT_TAG.RIGHT_CONTROL);
+    		
+    		_upControl = new cc.Sprite("#hb/up.png");
+    		_upControl.setPosition(cc.winSize.width * 0.5, cc.winSize.height * 0.75);
+    		_upControl.visible = false;
+    		this._texHappyBirthdayBatch.addChild(_upControl, HB.ZORDER.LETTER, HB.UNIT_TAG.UP_CONTROL);
+    		
     	}
     	
     	// Mute volume
@@ -338,6 +360,78 @@ var AppLayer = cc.LayerGradient.extend({
 	 */
 	onSplashParticlesEndingClbk:function(nodeExecutingAction, pos) {
 		this._cutus.born(pos);
+		this.schedule(this.displayTutorialLeftControls);
+		
+		var moveBy = cc.moveBy(1, cc.p(0, 7.5));
+		var move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
+
+		var moveByBack = cc.moveBy(1, cc.p(0, -7.5));
+		var moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
+
+		_leftControl.visible = true;
+		_rightControl.visible = true;
+		_upControl.visible = true;
+
+		var moveBy = cc.moveBy(1, cc.p(0, 7.5));
+		var move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
+
+		var moveByBack = cc.moveBy(1, cc.p(0, -7.5));
+		var moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
+		
+		var sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeatForever();
+		
+		_leftControl.runAction(sequence);
+
+		moveBy = cc.moveBy(1, cc.p(0, 7.5));
+		move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
+
+		moveByBack = cc.moveBy(1, cc.p(0, -7.5));
+		moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
+
+		sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeatForever();
+		
+		_rightControl.runAction(sequence);
+
+		moveBy = cc.moveBy(1, cc.p(0, 7.5));
+		move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
+
+		moveByBack = cc.moveBy(1, cc.p(0, -7.5));
+		moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
+
+		sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeatForever();
+		
+		_upControl.runAction(sequence);
+
+	},
+	
+	/**
+	 * <p>Displays tutorial with left controls. <br/>
+	 * </p>
+	 * @function
+	 */
+	displayTutorialLeftControls:function() {
+		
+		if( cc.sys.platform == cc.sys.DESKTOP_BROWSER ) {
+			
+		}
+		else {
+			this.unschedule(this.tutorialLeft);
+		}
+	},
+
+	/**
+	 * <p>Displays tutorial with right controls. <br/>
+	 * </p>
+	 * @function
+	 */
+	displayTutorialRightControls:function() {
+
+		if( cc.sys.platform == cc.sys.DESKTOP_BROWSER ) {
+			_rightControl.visible = true;
+		}
+		else {
+			this.unschedule(this.tutorialLeft);
+		}
 	},
 	
 	/**
@@ -352,26 +446,31 @@ var AppLayer = cc.LayerGradient.extend({
 				if ( HB.PRESSED_KEYS[cc.KEY.w] || HB.PRESSED_KEYS[cc.KEY.up] ) {
 					// Left + Jump
 					g_sharedAppLayer._cutus.jumpLeft();
+					this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.UP_CONTROL);
 				}
 				else {
 					// Left
 					g_sharedAppLayer._cutus.goToTheLeft();
 				}
+				this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.LEFT_CONTROL);
 			}
 			else if( ( HB.PRESSED_KEYS[cc.KEY.d] || HB.PRESSED_KEYS[cc.KEY.right] ) &&
 					( !HB.PRESSED_KEYS[cc.KEY.a] || !HB.PRESSED_KEYS[cc.KEY.left] ) ) {
 				if ( HB.PRESSED_KEYS[cc.KEY.w] || HB.PRESSED_KEYS[cc.KEY.up] ) {
 					// Right + Jump
 					g_sharedAppLayer._cutus.jumpRight();
+					this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.UP_CONTROL);
 				}
 				else {
 					// Right
 					g_sharedAppLayer._cutus.goToTheRight();
+					this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.RIGHT_CONTROL);
 				}
 			}
 			else if ( HB.PRESSED_KEYS[cc.KEY.w] || HB.PRESSED_KEYS[cc.KEY.up] ) {
 				// Jump
 				g_sharedAppLayer._cutus.jump(cc.p(0,0));
+				this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.UP_CONTROL);
 			}
 		}
 	}

@@ -1,0 +1,28 @@
+syntax: glob
+Build
+Library
+Temp
+obj
+*.suo
+*.sln
+*.sln.docstates
+*.csproj
+*.unityproj
+*.pidb
+*.userprefs
+*.DS_Store
+Thumbs.db
+*-csharp.sln.*/
+*.apk
+
+# Ignorar las carpetas de codigo.
+# Clonar el repositorio QuantumUnityDevelopment
+# en esa carpeta.
+
+Quantum/Assets/Code
+
+# Ignorar las carpetas de build
+
+One-Click-Deployment/android/build
+One-Click-Deployment/ios/build
+One-Click-Deployment/desktop/build
