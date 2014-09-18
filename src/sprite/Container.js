@@ -23,7 +23,7 @@
 var Container = cc.Sprite.extend({
 	
 	// Private variables
-	_fallDuration:1,	// 31.25,
+	_fallDuration:31.25,
 	
 	/**
 	 * <p>Default constructor.<br/>
