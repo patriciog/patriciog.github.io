@@ -28,7 +28,7 @@ var Letter = cc.Sprite.extend({
 	active:false,
 	
 	// Private variables
-	_letterType:0,
+	_letterType:null,
 	_soundEffect:null,
 	
 	/**

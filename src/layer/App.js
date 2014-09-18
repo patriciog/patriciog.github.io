@@ -110,21 +110,30 @@ var AppLayer = cc.LayerGradient.extend({
     	// Creates the letters from Level and adds to the SpriteBatchNode
     	var letter;
     	var xOffset = 100;
-    	for(var i = 0; i< Level.letters.length; i++){
-    		var selLetter = Level.letters[i];
-    		if(selLetter){
-    			for(var tIndex = 0; tIndex < selLetter.Types.length;tIndex++ ){
-    				var letterTypeParse = LetterType[selLetter.Types[tIndex]];
-    				if(letterTypeParse.textureName!=""){
-    					letter = Letter.create(letterTypeParse);
-    					// Sets the positionY equals to the floor
-    					letter.setPosition(xOffset, HB.FLOOR.POSITION_Y);
-    				}
-    				// Sets the positionX +50
-    				xOffset=xOffset+50;
-    			}
-    		}
-    	}
+		var selLetters = Level.letters[0];
+		if(selLetters){
+			for(var currentLetter = 0; currentLetter < Level.letters[0].Types.length; currentLetter++ ){
+			
+				for(var currentType = 0; currentType < LetterType.length; currentType++ ){
+					
+					if( Level.letters[0].Types[currentLetter] == LetterType[currentType].type ){
+						
+						var letterTypeParse = LetterType[LetterType[currentType].id];
+						if(letterTypeParse.textureName!=""){
+							letter = Letter.create(letterTypeParse);
+							// Sets the positionY equals to the floor
+							letter.setPosition(xOffset, HB.FLOOR.POSITION_Y);
+						}
+						// Sets the positionX +50
+						xOffset=xOffset+50;
+						continue;
+						
+					}
+					
+				}
+				
+			}
+		}
 
     	// Creates the container and adds to the SpriteBatchNode
     	this._container = new Container();

@@ -9,7 +9,7 @@
  *
  */
 
-// Level definition
+// Intuitive level design
 var Level = {
 		letterMax:10,
 		letters:[
