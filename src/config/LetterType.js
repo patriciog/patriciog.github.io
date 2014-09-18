@@ -14,7 +14,7 @@
 var LetterType = [
      {
     	 id:0,
-    	 type:"!",
+    	 type:"¡",
     	 textureName:"hb/inverted_exclamation_mark.png",
     	 soundEffect:res.letterEffect01_mp3
      },
@@ -74,7 +74,7 @@ var LetterType = [
      },
      {
     	 id:10,
-    	 type:"¡",
+    	 type:"!",
     	 textureName:"hb/exclamation_mark.png",
     	 soundEffect:res.letterEffect10_mp3
      }
