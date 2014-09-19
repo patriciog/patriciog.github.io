@@ -359,78 +359,101 @@ var AppLayer = cc.LayerGradient.extend({
 	 * @function
 	 */
 	onSplashParticlesEndingClbk:function(nodeExecutingAction, pos) {
-		this._cutus.born(pos);
-		this.schedule(this.displayTutorialLeftControls);
 		
-		var moveBy = cc.moveBy(1, cc.p(0, 7.5));
-		var move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
-
-		var moveByBack = cc.moveBy(1, cc.p(0, -7.5));
-		var moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
-
+		this._cutus.born(pos);
+		
 		_leftControl.visible = true;
 		_rightControl.visible = true;
 		_upControl.visible = true;
-
-		var moveBy = cc.moveBy(1, cc.p(0, 7.5));
-		var move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
-
-		var moveByBack = cc.moveBy(1, cc.p(0, -7.5));
-		var moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
 		
-		var sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeatForever();
-		
-		_leftControl.runAction(sequence);
-
-		moveBy = cc.moveBy(1, cc.p(0, 7.5));
-		move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
-
-		moveByBack = cc.moveBy(1, cc.p(0, -7.5));
-		moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
-
-		sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeatForever();
-		
-		_rightControl.runAction(sequence);
-
-		moveBy = cc.moveBy(1, cc.p(0, 7.5));
-		move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
-
-		moveByBack = cc.moveBy(1, cc.p(0, -7.5));
-		moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
-
-		sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeatForever();
-		
-		_upControl.runAction(sequence);
+		// Custom schedules perfoms each X seconds
+		this.schedule(
+			this.stimulateTutorialLeftControls,
+			( HB.TUTORIAL.ANIM_DURATION_DOWN + HB.TUTORIAL.ANIM_DURATION_UP ) * HB.TUTORIAL.REPETITIONS * 2
+		);
+		this.schedule(
+			this.stimulateTutorialRightControls,
+			( HB.TUTORIAL.ANIM_DURATION_DOWN + HB.TUTORIAL.ANIM_DURATION_UP ) * HB.TUTORIAL.REPETITIONS * 2
+		);
+		this.schedule(
+			this.stimulateTutorialUpControls,
+			( HB.TUTORIAL.ANIM_DURATION_DOWN + HB.TUTORIAL.ANIM_DURATION_UP ) * HB.TUTORIAL.REPETITIONS * 2
+		);
 
 	},
 	
 	/**
-	 * <p>Displays tutorial with left controls. <br/>
+	 * <p>Animate left controls of the tutorial. <br/>
 	 * </p>
 	 * @function
 	 */
-	displayTutorialLeftControls:function() {
+	stimulateTutorialLeftControls:function() {
 		
 		if( cc.sys.platform == cc.sys.DESKTOP_BROWSER ) {
 			
+			var moveBy = cc.moveBy(HB.TUTORIAL.ANIM_DURATION_DOWN, cc.p(0, 7.5));
+			var move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
+
+			var moveByBack = cc.moveBy(HB.TUTORIAL.ANIM_DURATION_UP, cc.p(0, -7.5));
+			var moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
+			
+			var sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeat(HB.TUTORIAL.REPETITIONS);
+
+			_leftControl.runAction(sequence);
+			
 		}
 		else {
-			this.unschedule(this.tutorialLeft);
+			this.unschedule(this.stimulateTutorialLeftControls);
 		}
 	},
 
 	/**
-	 * <p>Displays tutorial with right controls. <br/>
+	 * <p>Animate right controls of the tutorial. <br/>
 	 * </p>
 	 * @function
 	 */
-	displayTutorialRightControls:function() {
+	stimulateTutorialRightControls:function() {
 
 		if( cc.sys.platform == cc.sys.DESKTOP_BROWSER ) {
-			_rightControl.visible = true;
+			
+			var moveBy = cc.moveBy(HB.TUTORIAL.ANIM_DURATION_DOWN, cc.p(0, 7.5));
+			var move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
+
+			var moveByBack = cc.moveBy(HB.TUTORIAL.ANIM_DURATION_UP, cc.p(0, -7.5));
+			var moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
+
+			sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeat(HB.TUTORIAL.REPETITIONS);
+
+			_rightControl.runAction(sequence);
+			
 		}
 		else {
-			this.unschedule(this.tutorialLeft);
+			this.unschedule(this.stimulateTutorialRightControls);
+		}
+	},
+
+	/**
+	 * <p>Animate up controls of the tutorial. <br/>
+	 * </p>
+	 * @function
+	 */
+	stimulateTutorialUpControls:function() {
+
+		if( cc.sys.platform == cc.sys.DESKTOP_BROWSER ) {
+
+			var moveBy = cc.moveBy(HB.TUTORIAL.ANIM_DURATION_DOWN, cc.p(0, 7.5));
+			var move_ease_out = moveBy.clone().easing(cc.easeSineInOut());
+
+			var moveByBack = cc.moveBy(HB.TUTORIAL.ANIM_DURATION_UP, cc.p(0, -7.5));
+			var moveBack_ease_out = moveByBack.clone().easing(cc.easeSineInOut());
+
+			sequence = cc.sequence(move_ease_out, moveBack_ease_out).repeat(HB.TUTORIAL.REPETITIONS);
+
+			_upControl.runAction(sequence);
+
+		}
+		else {
+			this.unschedule(this.stimulateTutorialUpControls);
 		}
 	},
 	
@@ -446,12 +469,14 @@ var AppLayer = cc.LayerGradient.extend({
 				if ( HB.PRESSED_KEYS[cc.KEY.w] || HB.PRESSED_KEYS[cc.KEY.up] ) {
 					// Left + Jump
 					g_sharedAppLayer._cutus.jumpLeft();
+					this.unschedule(this.stimulateTutorialUpControls);
 					this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.UP_CONTROL);
 				}
 				else {
 					// Left
 					g_sharedAppLayer._cutus.goToTheLeft();
 				}
+				this.unschedule(this.stimulateTutorialLeftControls);
 				this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.LEFT_CONTROL);
 			}
 			else if( ( HB.PRESSED_KEYS[cc.KEY.d] || HB.PRESSED_KEYS[cc.KEY.right] ) &&
@@ -459,17 +484,20 @@ var AppLayer = cc.LayerGradient.extend({
 				if ( HB.PRESSED_KEYS[cc.KEY.w] || HB.PRESSED_KEYS[cc.KEY.up] ) {
 					// Right + Jump
 					g_sharedAppLayer._cutus.jumpRight();
+					this.unschedule(this.stimulateTutorialUpControls);
 					this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.UP_CONTROL);
 				}
 				else {
 					// Right
 					g_sharedAppLayer._cutus.goToTheRight();
-					this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.RIGHT_CONTROL);
 				}
+				this.unschedule(this.stimulateTutorialRightControls);
+				this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.RIGHT_CONTROL);
 			}
 			else if ( HB.PRESSED_KEYS[cc.KEY.w] || HB.PRESSED_KEYS[cc.KEY.up] ) {
 				// Jump
 				g_sharedAppLayer._cutus.jump(cc.p(0,0));
+				this.unschedule(this.stimulateTutorialUpControls);
 				this._texHappyBirthdayBatch.removeChildByTag(HB.UNIT_TAG.UP_CONTROL);
 			}
 		}
